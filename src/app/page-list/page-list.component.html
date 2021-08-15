@@ -1,0 +1,30 @@
+<div class="w-100 mx-auto mt-4 mb-6">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Word Count</th>
+        <th scope="col">Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let page of pages.slice(0, pagesToView)">
+        <td>
+          <a [href]="'https://en.wikipedia.org?curid=' + page.pageid">
+            {{ page.title }}
+          </a>
+        </td>
+        <td>{{ page.wordcount }}</td>
+        <td [innerHTML]="page.snippet"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button
+    class="btn btn-primary"
+    (click)="onShowMorePages()"
+    *ngIf="pages.length !== pagesToView"
+  >
+    Show more
+  </button>
+</div>

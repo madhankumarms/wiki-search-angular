@@ -1,0 +1,9 @@
+<form class="form w-75 ms-auto" (submit)="onFormSubmit($event)">
+  <input
+    type="text"
+    class="form-control w-50 d-inline-block"
+    placeholder="Type the title to search"
+    (input)="onInput($event)"
+  />
+  <button type="submit" class="btn btn-primary mx-2">Search page</button>
+</form>
